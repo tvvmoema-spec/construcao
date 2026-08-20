@@ -14,8 +14,8 @@ const CERT_CONFIG = {
   // 1. Caminho da Imagem Base do Certificado
   imageSrc: 'img/certificado.webp',
 
-  // 2. Chave de Armazenamento Local (exclusiva para Lipo HD)
-  storageKey: 'cert_data_lipohd_v1',
+  // 2. Chave de Armazenamento Local
+  storageKey: 'cert_data_construcao_v1',
 
   // 3. Configurações de Renderização do Nome do Aluno ("Nome completo: ____________________")
   name: {
@@ -26,7 +26,7 @@ const CERT_CONFIG = {
     minFontSize: 18,      // Tamanho mínimo para nomes longos
     fontFamily: "'Playfair Display', 'Cormorant Garamond', Georgia, serif",
     fontWeight: '700',
-    color: '#013E4B'      // Deep navy teal combinando com a identidade Lipo HD
+    color: '#013E4B'
   },
 
   // 4. Configurações da Data de Conclusão ("Data: ____________________")
@@ -41,7 +41,7 @@ const CERT_CONFIG = {
 
   // 5. Configurações da Assinatura Oficial (Após a palavra "Assinatura:")
   signature: {
-    text: 'Equipe Lipo HD',
+    text: 'Equipe Diagnóstico Visual',
     xPosition: 1035,      // Deslocado para a direita para ficar no traço após "Assinatura:" e antes do selo
     yPosition: 892,       // Posicionado acima do traço
     fontSize: 19,         // Tamanho reduzido e proporcional para caber com elegância no campo
@@ -95,7 +95,7 @@ const CERT_CONFIG = {
   // Generate unique verification code
   function generateAuthCode() {
     const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-    let code = 'LHD-';
+    let code = 'DVC-';
     for (let i = 0; i < 4; i++) {
       code += chars.charAt(Math.floor(Math.random() * chars.length));
     }
