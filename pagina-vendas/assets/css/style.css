@@ -1079,7 +1079,7 @@ section {
   inset: 6px;
   pointer-events: none;
   z-index: 6;
-  border: 1.5px dashed var(--coral);
+  border: 2.5px dashed #B85830;
   border-radius: calc(var(--r-lg) - 6px);
 }
 
@@ -1181,8 +1181,8 @@ section {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: rgba(201, 111, 74, 0.07);
-  border: 1.5px dashed var(--coral);
+  background: rgba(201, 111, 74, 0.09);
+  border: 2px dashed #B85830;
   border-radius: var(--r-sm);
   padding: 12px;
   font-family: var(--font-display);
