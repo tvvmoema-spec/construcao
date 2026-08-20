@@ -404,17 +404,19 @@ section {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: #15803D;
+  background: #16A34A;
   display: grid;
   place-items: center;
   margin-top: 1px;
-  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, 0.4);
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.45);
 }
 
 .check svg {
   width: 14px;
   height: 14px;
-  stroke: #fff;
+  stroke: #ffffff;
+  stroke-width: 3.5;
 }
 
 .delivery {
@@ -786,12 +788,14 @@ section {
 }
 
 .benefit-block .check {
-  background: #15803D;
-  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, .4);
+  background: #16A34A;
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, .45);
 }
 
 .benefit-block .check svg {
   stroke: #fff;
+  stroke-width: 3.5;
 }
 
 /* ============================================================
@@ -877,16 +881,19 @@ section {
 }
 
 .whom-card .check {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   margin-bottom: 16px;
-  background: #15803D;
-  box-shadow: 0 6px 14px -3px rgba(21, 128, 61, 0.45);
+  background: #16A34A;
+  opacity: 1;
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.45);
 }
 
 .whom-card .check svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
+  stroke: #ffffff;
+  stroke-width: 3.5;
 }
 
 .whom-card h3 {
@@ -990,13 +997,16 @@ section {
 .recv-list .check {
   width: 24px;
   height: 24px;
-  background: #15803D;
-  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, .35);
+  background: #16A34A;
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, .4);
 }
 
 .recv-list .check svg {
   width: 13px;
   height: 13px;
+  stroke: #ffffff;
+  stroke-width: 3.5;
 }
 
 /* ============================================================
@@ -1153,13 +1163,16 @@ section {
 .bonus-card ul .check {
   width: 22px;
   height: 22px;
-  background: #15803D;
-  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, .35);
+  background: #16A34A;
+  opacity: 1;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, .4);
 }
 
 .bonus-card ul .check svg {
   width: 12px;
   height: 12px;
+  stroke: #ffffff;
+  stroke-width: 3.5;
 }
 
 .value-tag {
@@ -1303,13 +1316,16 @@ section {
   width: 22px;
   height: 22px;
   margin-top: 1px;
-  background: #15803D;
-  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, .35);
+  background: #16A34A;
+  opacity: 1;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, .4);
 }
 
 .plan ul .check svg {
   width: 12px;
   height: 12px;
+  stroke: #ffffff;
+  stroke-width: 3.5;
 }
 
 .price-old {
@@ -1846,13 +1862,16 @@ section {
 .step-card ul .check {
   width: 19px;
   height: 19px;
-  background: #15803D;
-  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, .35);
+  background: #16A34A;
+  opacity: 1;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, .4);
 }
 
 .step-card ul .check svg {
   width: 11px;
   height: 11px;
+  stroke: #ffffff;
+  stroke-width: 3.5;
 }
 
 .step-card ul li.note {
