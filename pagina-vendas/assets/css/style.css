@@ -786,8 +786,8 @@ section {
 }
 
 .benefit-block .check {
-  background: var(--sage);
-  box-shadow: 0 4px 10px -3px rgba(123, 157, 139, .4);
+  background: var(--petroleum);
+  box-shadow: 0 4px 10px -3px rgba(23, 74, 69, .4);
 }
 
 .benefit-block .check svg {
@@ -877,11 +877,11 @@ section {
 }
 
 .whom-card .check {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   margin-bottom: 16px;
-  background: var(--sage);
-  box-shadow: 0 4px 10px -3px rgba(123, 157, 139, .35);
+  background: var(--petroleum);
+  box-shadow: 0 6px 14px -3px rgba(23, 74, 69, .45);
 }
 
 .whom-card .check svg {
@@ -990,8 +990,8 @@ section {
 .recv-list .check {
   width: 24px;
   height: 24px;
-  background: var(--sage);
-  box-shadow: 0 4px 10px -3px rgba(123, 157, 139, .35);
+  background: var(--petroleum);
+  box-shadow: 0 4px 10px -3px rgba(23, 74, 69, .35);
 }
 
 .recv-list .check svg {
@@ -1153,8 +1153,8 @@ section {
 .bonus-card ul .check {
   width: 22px;
   height: 22px;
-  background: var(--sage);
-  box-shadow: 0 4px 10px -3px rgba(123, 157, 139, .35);
+  background: var(--petroleum);
+  box-shadow: 0 4px 10px -3px rgba(23, 74, 69, .35);
 }
 
 .bonus-card ul .check svg {
@@ -1303,8 +1303,8 @@ section {
   width: 22px;
   height: 22px;
   margin-top: 1px;
-  background: var(--sage);
-  box-shadow: 0 4px 10px -3px rgba(123, 157, 139, .35);
+  background: var(--petroleum);
+  box-shadow: 0 4px 10px -3px rgba(23, 74, 69, .35);
 }
 
 .plan ul .check svg {
