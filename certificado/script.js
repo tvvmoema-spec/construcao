@@ -17,37 +17,26 @@ const CERT_CONFIG = {
   // 2. Chave de Armazenamento Local
   storageKey: 'cert_data_construcao_v1',
 
-  // 3. Configurações de Renderização do Nome do Aluno ("Nome completo: ____________________")
+  // 3. Configurações de Renderização do Nome do Aluno (dentro do box "NOME COMPLETO")
   name: {
-    xPosition: 745,       // Centralizado no meio exato do certificado (alinhado com o texto e título)
-    yPosition: 660,       // Posicionado limpo e nítido acima da linha
-    maxAllowedWidth: 860, // Largura máxima antes de reduzir a fonte
-    initialFontSize: 32,  // Tamanho da fonte padrão
-    minFontSize: 18,      // Tamanho mínimo para nomes longos
+    xPosition: 900,       // Centralizado dentro da caixa de texto do Nome Completo (X: 538..1261)
+    yPosition: 682,       // Alinhamento vertical centralizado no box (Y: 652..713)
+    maxAllowedWidth: 680, // Largura máxima da caixa
+    initialFontSize: 28,  // Tamanho proporcional e nítido
+    minFontSize: 16,      // Tamanho mínimo para nomes longos
     fontFamily: "'Playfair Display', 'Cormorant Garamond', Georgia, serif",
     fontWeight: '700',
-    color: '#013E4B'
+    color: '#174A45'      // Verde petróleo oficial
   },
 
-  // 4. Configurações da Data de Conclusão ("Data: ____________________")
+  // 4. Configurações da Data de Conclusão (dentro do box "DATA DE CONCLUSÃO")
   date: {
-    xPosition: 440,       // Centro da linha de data (100% aprovado)
-    yPosition: 896,       // Posição Y perfeita sobre o traço
-    fontSize: 19,
+    xPosition: 900,       // Centralizado dentro da caixa de Data (X: 537..1261)
+    yPosition: 769,       // Alinhamento vertical centralizado no box (Y: 739..800)
+    fontSize: 22,         // Tamanho proporcional para data
     fontFamily: "'Poppins', system-ui, sans-serif",
     fontWeight: '600',
-    color: '#014E5E'
-  },
-
-  // 5. Configurações da Assinatura Oficial (Após a palavra "Assinatura:")
-  signature: {
-    text: 'Equipe Diagnóstico Visual',
-    xPosition: 1035,      // Deslocado para a direita para ficar no traço após "Assinatura:" e antes do selo
-    yPosition: 892,       // Posicionado acima do traço
-    fontSize: 19,         // Tamanho reduzido e proporcional para caber com elegância no campo
-    fontFamily: "'Dancing Script', 'Alex Brush', cursive",
-    fontWeight: '600',
-    color: '#013E4B'
+    color: '#174A45'
   }
 };
 
@@ -164,7 +153,7 @@ const CERT_CONFIG = {
       }
     }
 
-    // 1. Draw Participant Name (Centered on the underline after "Nome completo:")
+    // 1. Draw Participant Name (Centered inside the "NOME COMPLETO" box)
     const nameX = CERT_CONFIG.name.xPosition || (canvas.width / 2);
     const nameY = CERT_CONFIG.name.yPosition;
 
@@ -182,19 +171,12 @@ const CERT_CONFIG = {
     ctx.fillStyle = CERT_CONFIG.name.color;
     ctx.fillText(name, nameX, nameY);
 
-    // 2. Draw Emission Date (Centered on the underline after "Data:")
+    // 2. Draw Emission Date (Centered inside the "DATA DE CONCLUSÃO" box)
     ctx.font = `${CERT_CONFIG.date.fontWeight} ${CERT_CONFIG.date.fontSize}px ${CERT_CONFIG.date.fontFamily}`;
     ctx.fillStyle = CERT_CONFIG.date.color;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(dateStr, CERT_CONFIG.date.xPosition, CERT_CONFIG.date.yPosition);
-
-    // 3. Draw Official Team Signature (Centered on the underline after "Assinatura:")
-    ctx.font = `${CERT_CONFIG.signature.fontWeight} ${CERT_CONFIG.signature.fontSize}px ${CERT_CONFIG.signature.fontFamily}`;
-    ctx.fillStyle = CERT_CONFIG.signature.color;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(CERT_CONFIG.signature.text, CERT_CONFIG.signature.xPosition, CERT_CONFIG.signature.yPosition);
 
     return canvas.toDataURL('image/png', 1.0);
   }
