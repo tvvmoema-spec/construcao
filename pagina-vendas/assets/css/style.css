@@ -404,11 +404,11 @@ section {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: var(--petroleum);
+  background: #15803D;
   display: grid;
   place-items: center;
   margin-top: 1px;
-  box-shadow: 0 4px 10px -3px var(--green-glow);
+  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, 0.4);
 }
 
 .check svg {
@@ -786,8 +786,8 @@ section {
 }
 
 .benefit-block .check {
-  background: var(--petroleum);
-  box-shadow: 0 4px 10px -3px rgba(23, 74, 69, .4);
+  background: #15803D;
+  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, .4);
 }
 
 .benefit-block .check svg {
@@ -880,8 +880,8 @@ section {
   width: 36px;
   height: 36px;
   margin-bottom: 16px;
-  background: var(--petroleum);
-  box-shadow: 0 6px 14px -3px rgba(23, 74, 69, .45);
+  background: #15803D;
+  box-shadow: 0 6px 14px -3px rgba(21, 128, 61, 0.45);
 }
 
 .whom-card .check svg {
@@ -990,8 +990,8 @@ section {
 .recv-list .check {
   width: 24px;
   height: 24px;
-  background: var(--petroleum);
-  box-shadow: 0 4px 10px -3px rgba(23, 74, 69, .35);
+  background: #15803D;
+  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, .35);
 }
 
 .recv-list .check svg {
@@ -1153,8 +1153,8 @@ section {
 .bonus-card ul .check {
   width: 22px;
   height: 22px;
-  background: var(--petroleum);
-  box-shadow: 0 4px 10px -3px rgba(23, 74, 69, .35);
+  background: #15803D;
+  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, .35);
 }
 
 .bonus-card ul .check svg {
@@ -1303,8 +1303,8 @@ section {
   width: 22px;
   height: 22px;
   margin-top: 1px;
-  background: var(--petroleum);
-  box-shadow: 0 4px 10px -3px rgba(23, 74, 69, .35);
+  background: #15803D;
+  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, .35);
 }
 
 .plan ul .check svg {
@@ -1846,8 +1846,8 @@ section {
 .step-card ul .check {
   width: 19px;
   height: 19px;
-  background: var(--sage);
-  box-shadow: 0 4px 10px -3px rgba(123, 157, 139, .35);
+  background: #15803D;
+  box-shadow: 0 4px 10px -3px rgba(21, 128, 61, .35);
 }
 
 .step-card ul .check svg {
