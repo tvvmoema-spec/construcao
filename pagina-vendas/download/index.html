@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área de Acesso e Download — Diagnóstico Visual da Construção</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --off-white: #F5F1E8;
+      --cream: #F5F1E8;
+      --cream-2: #EFE9DC;
+      --paper: #FAF8F3;
+      --petroleum: #174A45;
+      --petroleum-deep: #0F3330;
+      --ink: #26312F;
+      --muted: #566764;
+      --coral: #C96F4A;
+      --coral-deep: #B25C37;
+      --green: #16A34A;
+      --green-deep: #15803D;
+      --border: #D8D0C3;
+      --border-strong: #C4BAAB;
+      --r-sm: 8px;
+      --r: 14px;
+      --r-lg: 20px;
+      --pill: 9999px;
+      --sh-card: 0 10px 30px -10px rgba(23, 74, 69, 0.08);
+      --sh-lg: 0 20px 45px -12px rgba(23, 74, 69, 0.16);
+      --font: 'Poppins', system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--off-white);
+      color: var(--ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 60px;
+    }
+
+    /* Top bar */
+    .topbar {
+      background: var(--petroleum);
+      color: #fff;
+      text-align: center;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .wrap {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 44px 0 32px;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--paper);
+      color: var(--petroleum);
+      font-weight: 600;
+      font-size: 13.5px;
+      padding: 7px 18px;
+      border-radius: var(--pill);
+      border: 1.5px solid var(--border);
+      margin-bottom: 20px;
+      box-shadow: var(--sh-card);
+    }
+
+    .badge-pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.25);
+    }
+
+    .header h1 {
+      font-size: clamp(26px, 4vw, 38px);
+      color: var(--petroleum);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .header p {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Main Featured Product Card */
+    .featured-card {
+      background: var(--paper);
+      border-radius: var(--r-lg);
+      border: 2.5px solid var(--coral);
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: var(--sh-lg);
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 36px;
+      align-items: center;
+      position: relative;
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -14px;
+      left: 32px;
+      background: var(--coral);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 5px 16px;
+      border-radius: var(--pill);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: 0 6px 14px -3px rgba(201, 111, 74, 0.4);
+    }
+
+    .featured-art {
+      text-align: center;
+      background: linear-gradient(180deg, var(--cream-2), var(--paper));
+      border-radius: var(--r);
+      padding: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .featured-art img {
+      max-width: 100%;
+      height: auto;
+      max-height: 260px;
+      filter: drop-shadow(0 16px 24px rgba(23, 74, 69, 0.18));
+      transition: transform 0.3s ease;
+    }
+
+    .featured-card:hover .featured-art img {
+      transform: scale(1.03);
+    }
+
+    .featured-content h2 {
+      font-size: 24px;
+      color: var(--petroleum);
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .featured-content p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
+
+    /* Bonus Grid */
+    .section-title {
+      font-size: 22px;
+      color: var(--petroleum);
+      font-weight: 700;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background: var(--paper);
+      border-radius: var(--r-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--sh-card);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      pointer-events: none;
+      z-index: 6;
+      border: 2px dashed #B85830;
+      border-radius: calc(var(--r-lg) - 6px);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sh-lg);
+    }
+
+    .card-top {
+      background: linear-gradient(180deg, var(--cream-2), var(--paper));
+      padding: 24px 20px 10px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .card-badge {
+      display: inline-block;
+      background: var(--petroleum);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: var(--pill);
+      margin-bottom: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    .card-top img {
+      max-width: 100%;
+      height: auto;
+      max-height: 190px;
+      margin: 0 auto;
+      filter: drop-shadow(0 12px 20px rgba(23, 74, 69, 0.15));
+      transition: transform 0.25s ease;
+    }
+
+    .card:hover .card-top img {
+      transform: scale(1.04);
+    }
+
+    .card-body {
+      padding: 22px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-body h3 {
+      font-size: 17.5px;
+      color: var(--petroleum);
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .card-body p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 24px;
+      border-radius: var(--r-sm);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn--green {
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 8px 18px -4px rgba(22, 163, 74, 0.45);
+    }
+
+    .btn--green:hover {
+      background: var(--green-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -4px rgba(22, 163, 74, 0.55);
+    }
+
+    .btn--coral {
+      background: var(--coral);
+      color: #fff;
+      box-shadow: 0 8px 18px -4px rgba(201, 111, 74, 0.4);
+    }
+
+    .btn--coral:hover {
+      background: var(--coral-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -4px rgba(201, 111, 74, 0.5);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* Support / Info Box */
+    .info-box {
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r);
+      padding: 26px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: var(--sh-card);
+      margin-top: 10px;
+    }
+
+    .info-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(22, 163, 74, 0.15);
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .info-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .info-text h4 {
+      color: var(--petroleum);
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .info-text p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .featured-card {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+        gap: 20px;
+      }
+      .featured-badge {
+        left: 20px;
+      }
+      .bonus-grid {
+        grid-template-columns: 1fr;
+      }
+      .info-box {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    🎉 Parabéns pela sua decisão! Todos os seus materiais estão liberados abaixo.
+  </div>
+
+  <div class="wrap">
+    <header class="header">
+      <div class="badge-pill">
+        <span class="dot"></span> Acesso Imediato & Download
+      </div>
+      <h1>Seus Materiais de Estudo</h1>
+      <p>Clique no botão de cada material para visualizar o arquivo em PDF de alta resolução ou salvar no seu computador e celular.</p>
+    </header>
+
+    <!-- MATERIAL PRINCIPAL -->
+    <article class="featured-card">
+      <div class="featured-badge">⭐ Material Principal</div>
+      <div class="featured-art">
+        <img src="../assets/img/principal.webp" alt="Diagnóstico Visual da Construção — 150 Patologias Ilustradas">
+      </div>
+      <div class="featured-content">
+        <h2>Diagnóstico Visual da Construção — 150 Patologias Ilustradas</h2>
+        <p>Material completo e ilustrado com 150 patologias construtivas para consulta rápida e visual de fissuras, concreto, estruturas, umidade, infiltrações e impermeabilização.</p>
+        <a href="https://drive.google.com/file/d/1woL5iKcGgZmUQ6pxO41SWyRgXKgLYO7m/view" target="_blank" rel="noopener noreferrer" class="btn btn--green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          ACESSAR MATERIAL PRINCIPAL (.PDF)
+        </a>
+      </div>
+    </article>
+
+    <!-- BÔNUS -->
+    <h2 class="section-title">🎁 Seus Bônus Exclusivos</h2>
+    <div class="bonus-grid">
+      <!-- BÔNUS 1 -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-badge">BÔNUS #1</span>
+          <img src="../assets/img/bonus-01.webp" alt="Mapas Mentais das Patologias Mais Comuns">
+        </div>
+        <div class="card-body">
+          <h3>Mapas Mentais das Patologias Mais Comuns</h3>
+          <p>Mapas mentais para reforçar a revisão das principais patologias, organizando sinais e diagnósticos de forma rápida e visual.</p>
+          <a href="https://drive.google.com/file/d/1999Fk-sesuPikX8bdWSRtcl8hLsuZFqA/view" target="_blank" rel="noopener noreferrer" class="btn btn--coral">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            BAIXAR BÔNUS #1 (.PDF)
+          </a>
+        </div>
+      </article>
+
+      <!-- BÔNUS 2 -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-badge">BÔNUS #2</span>
+          <img src="../assets/img/bonus-02.webp" alt="Atlas Visual dos Erros de Execução na Obra">
+        </div>
+        <div class="card-body">
+          <h3>Atlas Visual dos Erros de Execução na Obra</h3>
+          <p>Material visual sobre erros de execução relacionados ao surgimento de fissuras, infiltrações, descolamentos e deteriorações.</p>
+          <a href="https://drive.google.com/file/d/1ayjcp0eFn2aFrQanH2cE6_Levh0HJ3Xq/view" target="_blank" rel="noopener noreferrer" class="btn btn--coral">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            BAIXAR BÔNUS #2 (.PDF)
+          </a>
+        </div>
+      </article>
+
+      <!-- BÔNUS 3 -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-badge">BÔNUS #3</span>
+          <img src="../assets/img/bonus-03.webp" alt="Mapas Mentais de Causas e Soluções Iniciais">
+        </div>
+        <div class="card-body">
+          <h3>Mapas Mentais de Causas e Soluções Iniciais</h3>
+          <p>Relação prática entre manifestações observadas, causas prováveis, pontos de verificação e ações corretivas iniciais.</p>
+          <a href="https://drive.google.com/file/d/1Qkw9PqKtOuo4nDOi4aK8OZJJ5n2iMLly/view" target="_blank" rel="noopener noreferrer" class="btn btn--coral">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            BAIXAR BÔNUS #3 (.PDF)
+          </a>
+        </div>
+      </article>
+
+      <!-- BÔNUS 4 -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-badge">BÔNUS #4</span>
+          <img src="../assets/img/bonus-04.webp" alt="Atlas Visual Comparativo: Patologias Parecidas">
+        </div>
+        <div class="card-body">
+          <h3>Atlas Visual Comparativo: Patologias Parecidas</h3>
+          <p>Guia comparativo visual para analisar patologias com sintomas semelhantes e distinguir suas principais diferenças.</p>
+          <a href="https://drive.google.com/file/d/10TmLk03P6SNNpVrBzjWqnRuA_dAUIF9f/view" target="_blank" rel="noopener noreferrer" class="btn btn--coral">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            BAIXAR BÔNUS #4 (.PDF)
+          </a>
+        </div>
+      </article>
+
+      <!-- BÔNUS 5 - CERTIFICADO -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-badge">BÔNUS #5</span>
+          <img src="../assets/img/bonus-05.webp" alt="Certificado de Conclusão Oficial">
+        </div>
+        <div class="card-body">
+          <h3>Certificado de Conclusão Oficial</h3>
+          <p>Acesse o gerador de certificado para emitir seu documento personalizado e oficial com seu nome completo.</p>
+          <a href="../certificado/" class="btn btn--green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+            GERAR MEU CERTIFICADO →
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <!-- DICA DE SUPORTE -->
+    <div class="info-box">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+      </div>
+      <div class="info-text">
+        <h4>💡 Dica importante de acesso</h4>
+        <p>Recomendamos que você baixe todos os PDFs e salve em uma pasta de fácil acesso no seu computador ou celular. Você também pode salvar esta página nos favoritos do seu navegador para consultar sempre que precisar.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Diagnóstico Visual da Construção — Todos os direitos reservados © 2026.</p>
+    </footer>
+  </div>
+</body>
+
+</html>
